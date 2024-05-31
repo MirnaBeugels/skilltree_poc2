@@ -1,7 +1,8 @@
-import { Inter } from "next/font/google";
+import { Rubik, Play } from "next/font/google";
 import "./globals.css";
 
-const inter = Inter({ subsets: ["latin"] });
+const rubik = Rubik({ subsets: ["latin"], weight: "300", variable: "--font-rubik-200" });
+const play = Play({ subsets: ["latin"], weight: "400", variable: "--font-play-400"});
 
 export const metadata = {
   title: "Create Next App",
@@ -11,7 +12,11 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={rubik.className}>
+        <div className={`${play.className} pageTitle`}>SkillTree/Software/Semester2</div>
+          {children}
+        <div className={rubik.className}></div>
+      </body>
     </html>
   );
 }
