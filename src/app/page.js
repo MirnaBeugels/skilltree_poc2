@@ -4,6 +4,16 @@ import styles from "./page.module.css";
 // Het aantal leeruitkomsten (kaarten) dat we willen weergeven
 var outcomes = 7;
 
+// Een array met de 6 illustraties voor in de lege cellen waar geen kaart in zit
+const images = [
+  "/iterate.svg",
+  "/react.svg",
+  "/monitor.svg", 
+  "/code.svg",
+  "/design.svg", 
+  "/improve.svg"
+];
+
 export default function Home() {
   // Een array om alle kaarten in op te slaan
   const cards = [];
@@ -29,7 +39,7 @@ export default function Home() {
   // Dynamisch de grid-template-areas genereren op basis van het aantal uitkomsten
   const gridTemplateAreas = useMemo(() => {
     let areas = ''; // String om de grid areas op te slaan
-    const rows = Math.ceil(outcomes / 2); // Bepaal het aantal rijen, 2 kaarten per rij
+    const rows = Math.ceil(outcomes / 2); // Bepaal het aantal rijen, er zijn 2 kaarten per rij
     let cardIndex = 1; // Huidige kaart index om bij te houden welke kaart geplaatst moet worden
     let oddRowEmptyIndex = 2; // De index van de lege cel in oneven rijen (de derde cel)
     let evenRowEmptyIndex = 0; // De index van de lege cel in even rijen (de eerste cel)
@@ -39,7 +49,15 @@ export default function Home() {
       for (let col = 0; col < 3; col++) {
         // Controleer of de huidige cel leeg moet zijn
         if ((row % 2 === 0 && col === oddRowEmptyIndex) || (row % 2 !== 0 && col === evenRowEmptyIndex)) {
-          rowAreas += ' .'; // Voeg een lege cel toe
+          // Voeg een afbeelding toe in plaats van een lege cel
+          const imageIndex = (row + col) % images.length; // Bepaal welke afbeelding te gebruiken
+          const imageClass = col === 0 ? styles.imageLeft : styles.imageRight; // Selecteer de juiste margestijl
+          cards.push(
+            <div key={`img${row}${col}`} className={`${styles.imageCell} ${imageClass}`}>
+              <img src={images[imageIndex]} alt={`Afbeelding ${imageIndex + 1}`} />
+            </div>
+          );
+          rowAreas += ` img${row}${col}`;
         } else if (cardIndex <= outcomes) {
           // Voeg een kaart toe als er nog kaarten zijn om toe te voegen
           rowAreas += ` card${String(cardIndex).padStart(2, '0')}`;

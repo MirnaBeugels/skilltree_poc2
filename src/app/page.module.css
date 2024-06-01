@@ -44,6 +44,31 @@
 .card19 { grid-area: card19; }
 .card20 { grid-area: card20; }
 
+/* Stijlen voor afbeeldingscellen */
+.imageCell {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 504px;
+    overflow: visible;
+  }
+  
+  .imageCell img {
+    opacity: 0.25;
+    mix-blend-mode: color-burn;
+  }
+  
+  /* Specifieke margestijlen voor afbeeldingscellen */
+  .imageLeft {
+    margin-left: -150px;
+    rotate: -15deg;
+  }
+  
+  .imageRight {
+    margin-left: 150px;
+    rotate: 15deg;
+  }
+
 .outcomeName {
     color: #C5CBFC;
     font-size: 2rem;
