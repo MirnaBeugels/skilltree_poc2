@@ -1,7 +1,7 @@
 import { Rubik, Play } from "next/font/google";
 import "./globals.css";
 
-const rubik = Rubik({ subsets: ["latin"], weight: "300", variable: "--font-rubik-200" });
+const rubik = Rubik({ subsets: ["latin"], weight: "300", variable: "--font-rubik-300" });
 const play = Play({ subsets: ["latin"], weight: "400", variable: "--font-play-400"});
 
 export const metadata = {
