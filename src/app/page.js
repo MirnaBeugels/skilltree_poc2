@@ -26,10 +26,27 @@ export default function Home() {
       <div key={i} className={`${styles.card} ${styles[`card${String(i).padStart(2, '0')}`]}`}>
         <div className={styles.outcomeName}>Leeruitkomst</div>
         <div className={styles.skillsContainer}>
-          <div className={styles.hexagon}>Skill01</div>
-          <div className={styles.hexagon}>Skill02</div>
-          <div className={styles.hexagon}>Skill03</div>
-          <div className={styles.hexagon}>Skill04</div>
+          <svg width="93" height="107" fill="none" xmlns="http://www.w3.org/2000/svg" className={styles.skill01}>
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M46.296 1.155 1 27.306V79.61l45.296 26.151L91.59 79.609V27.306L46.296 1.155ZM92.59 26.729 46.296 0 0 26.729v53.457l46.296 26.729L92.59 80.186V26.73Z" fill="#000"/>
+          </svg>
+          <svg width="93" height="107" fill="none" xmlns="http://www.w3.org/2000/svg" className={styles.skill02}>
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M46.296 1.155 1 27.306V79.61l45.296 26.151L91.59 79.609V27.306L46.296 1.155ZM92.59 26.729 46.296 0 0 26.729v53.457l46.296 26.729L92.59 80.186V26.73Z" fill="#000"/>
+          </svg>
+          <svg width="93" height="107" fill="none" xmlns="http://www.w3.org/2000/svg" className={styles.skill03}>
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M46.296 1.155 1 27.306V79.61l45.296 26.151L91.59 79.609V27.306L46.296 1.155ZM92.59 26.729 46.296 0 0 26.729v53.457l46.296 26.729L92.59 80.186V26.73Z" fill="#000"/>
+          </svg>
+          <svg width="93" height="107" fill="none" xmlns="http://www.w3.org/2000/svg" className={styles.skill04}>
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M46.296 1.155 1 27.306V79.61l45.296 26.151L91.59 79.609V27.306L46.296 1.155ZM92.59 26.729 46.296 0 0 26.729v53.457l46.296 26.729L92.59 80.186V26.73Z" fill="#000"/>
+          </svg>
+          <svg width="93" height="107" fill="none" xmlns="http://www.w3.org/2000/svg" className={styles.skill05}>
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M46.296 1.155 1 27.306V79.61l45.296 26.151L91.59 79.609V27.306L46.296 1.155ZM92.59 26.729 46.296 0 0 26.729v53.457l46.296 26.729L92.59 80.186V26.73Z" fill="#000"/>
+          </svg>
+          <svg width="93" height="107" fill="none" xmlns="http://www.w3.org/2000/svg" className={styles.skill06}>
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M46.296 1.155 1 27.306V79.61l45.296 26.151L91.59 79.609V27.306L46.296 1.155ZM92.59 26.729 46.296 0 0 26.729v53.457l46.296 26.729L92.59 80.186V26.73Z" fill="#000"/>
+          </svg>
+          <svg width="93" height="107" fill="none" xmlns="http://www.w3.org/2000/svg" className={styles.skill07}>
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M46.296 1.155 1 27.306V79.61l45.296 26.151L91.59 79.609V27.306L46.296 1.155ZM92.59 26.729 46.296 0 0 26.729v53.457l46.296 26.729L92.59 80.186V26.73Z" fill="#000"/>
+          </svg>
         </div>
         <div className={styles.outcomeGrade}>Oriënterend</div>
       </div>
