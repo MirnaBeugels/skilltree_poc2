@@ -1,6 +1,201 @@
 import { useMemo } from "react";
 import styles from "./page.module.css";
 
+// Een object met de leeruitkomsten, beoordelingen, vaardigheden en definities
+// Deze moet nog vervangen worden door data die opgeslagen wordt in een database, omdat het te complex is voor 1 object.
+const studentData = {
+  student: {
+    naam: "Jan Jansen",
+    studentnummer: "12345678",
+  },
+  outcomes: {
+    outcome01: {
+      name: "The name of this outcome",
+      grade: 8, // Beoordeling per leeruitkomst
+      definition: "Leeruitkomst definitie hier", // Definitie van de leeruitkomst
+      skills: {
+        Skill01: {
+          skill: "Programmeren",
+          definition: "Definitie gegeven",
+          claimed: true,
+          activities: {
+            activity01: {
+              name: "naam van activiteit",
+              explanation: "uitleg wat je kunt doen voor deze activiteit",
+              sources: {
+                source01: "url to source",
+                source02: "url to source",
+                source03: "url to source"
+              }
+            },
+            activity02: {
+              name: "naam van activiteit",
+              explanation: "",
+              sources: {
+                source01: "url to source",
+                source02: "url to source",
+                source03: "url to source"
+              }
+            }
+          }
+        }, 
+        Skill02: {
+          skill: "Tweede Skill",
+          definition: "Definitie van de tweede skill",
+          claimed: false,
+          activities: {
+            activity01: {
+              name: "naam van activiteit",
+              explanation: "uitleg wat je kunt doen voor deze activiteit",
+              sources: {
+                source01: "url to source",
+                source02: "url to source",
+                source03: "url to source"
+              }
+            },
+            activity02: {
+              name: "naam van activiteit",
+              explanation: "",
+              sources: {
+                source01: "url to source",
+                source02: "url to source",
+                source03: "url to source"
+              }
+            }
+          }
+        }, 
+        Skill03: {
+          skill: "Derde Skill",
+          definition: "Definitie van de derde skill",
+          claimed: true,
+          activities: {
+            activity01: {
+              name: "naam van activiteit",
+              explanation: "uitleg wat je kunt doen voor deze activiteit",
+              sources: {
+                source01: "url to source",
+                source02: "url to source",
+                source03: "url to source"
+              }
+            },
+            activity02: {
+              name: "naam van activiteit",
+              explanation: "",
+              sources: {
+                source01: "url to source",
+                source02: "url to source",
+                source03: "url to source"
+              }
+            }
+          }
+        }, 
+        Skill04: {
+          skill: "Vierde Skill",
+          definition: "Definitie van de vierde skill",
+          claimed: false,
+          activities: {
+            activity01: {
+              name: "naam van activiteit",
+              explanation: "uitleg wat je kunt doen voor deze activiteit",
+              sources: {
+                source01: "url to source",
+                source02: "url to source",
+                source03: "url to source"
+              }
+            },
+            activity02: {
+              name: "naam van activiteit",
+              explanation: "",
+              sources: {
+                source01: "url to source",
+                source02: "url to source",
+                source03: "url to source"
+              }
+            }
+          }
+        }, 
+        Skill05: {
+          skill: "Vijfde Skill",
+          definition: "Definitie van de vijfde skill",
+          claimed: true,
+          activities: {
+            activity01: {
+              name: "naam van activiteit",
+              explanation: "uitleg wat je kunt doen voor deze activiteit",
+              sources: {
+                source01: "url to source",
+                source02: "url to source",
+                source03: "url to source"
+              }
+            },
+            activity02: {
+              name: "naam van activiteit",
+              explanation: "",
+              sources: {
+                source01: "url to source",
+                source02: "url to source",
+                source03: "url to source"
+              }
+            }
+          }
+        }, 
+        Skill06: {
+          skill: "Zesde Skill",
+          definition: "Definitie van de zesde skill",
+          claimed: false,
+          activities: {
+            activity01: {
+              name: "naam van activiteit",
+              explanation: "uitleg wat je kunt doen voor deze activiteit",
+              sources: {
+                source01: "url to source",
+                source02: "url to source",
+                source03: "url to source"
+              }
+            },
+            activity02: {
+              name: "naam van activiteit",
+              explanation: "",
+              sources: {
+                source01: "url to source",
+                source02: "url to source",
+                source03: "url to source"
+              }
+            }
+          }
+        }, 
+        Skill07: {
+          skill: "Zevende Skill",
+          definition: "Definitie van de zevende skill",
+          claimed: true,
+          activities: {
+            activity01: {
+              name: "naam van activiteit",
+              explanation: "uitleg wat je kunt doen voor deze activiteit",
+              sources: {
+                source01: "url to source",
+                source02: "url to source",
+                source03: "url to source"
+              }
+            },
+            activity02: {
+              name: "naam van activiteit",
+              explanation: "",
+              sources: {
+                source01: "url to source",
+                source02: "url to source",
+                source03: "url to source"
+              }
+            }
+          }
+        }, 
+      } 
+    },
+  }
+}
+
+console.log(studentData);
+
 // Het aantal leeruitkomsten (kaarten) dat we willen weergeven
 var outcomes = 7;
 
@@ -14,10 +209,67 @@ const images = [
   "/improve.svg"
 ];
 
+// Een array met de 4 verschillende kleuren die de hexagons kunnen hebben
+const colors = ["#B758F1", "#1D6AFF", "#1FAAFF", "#1DD6FF"];
+
+// Een functie om een random kleur te kiezen uit de 4 beschikbare kleuren in colors
+function getRandomColor() {
+  const randomIndex = Math.floor(Math.random() * colors.length);
+  return colors[randomIndex];
+}
+
+// Een functie om te bepalen hoe de hexagon eruit ziet > kleur, gevuld/niet gevuld, kleur vd tekst & font-weight zodat het beter leesbaar is
+function getHexagonSVG(claimed, color, skillName) {
+
+  // Wanneer een skill niet behaald is en de lege hexagon weergegeven wordt moet de tekst dezelfde kleur als de hexagon hebben
+  const textColor = claimed ? "#140C2C" : color;
+  
+  // Alle skills moeten dikgedrukt zijn
+  const fontWeight = claimed ? "400" : "400";
+  
+  // Wanneer de skill behaald is laten we de gevulde hexagon zien met donkere tekst
+  if (claimed) {
+    return (
+      `<svg width="93" height="107" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path fill-rule="evenodd" clip-rule="evenodd" d="M46.458 1.155 1.162 27.306V79.61l45.296 26.151 45.295-26.151V27.306L46.458 1.155Zm46.295 25.574L46.458 0 .162 26.729v53.457l46.296 26.729 46.295-26.729V26.73Z" fill="${color}"/>
+        <path d="m46.573 6 41.136 23.75v47.5L46.573 101 5.436 77.25v-47.5L46.573 6Z" fill="${color}"/>
+        <text x="50%" y="50%" text-anchor="middle" fill="#140C2C" font-size="18" dy=".3em" style="font-weight: ${fontWeight}; text-transform=: capitalize;">${skillName}</text>
+      </svg>`
+    );
+  
+    // Zo niet dan laten we de lege hexagon zien en heeft de tekst dezelfde kleur als die van de hexagon omlijning
+  } else {
+    return (
+      `<svg width="93" height="107" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path fill-rule="evenodd" clip-rule="evenodd" d="M46.296 1.155 1 27.306V79.61l45.296 26.151L91.59 79.609V27.306L46.296 1.155ZM92.59 26.729 46.296 0 0 26.729v53.457l46.296 26.729L92.59 80.186V26.73Z" fill="${color}"/>
+        <text x="50%" y="50%" text-anchor="middle" fill="${color}" font-size="18" font-weight="bold" dy=".3em" style="font-weight: ${fontWeight}; text-transform=: capitalize;">${skillName}</text>
+      </svg>`
+    );
+  }
+}
+
 export default function Home() {
+
   // Een array om alle kaarten in op te slaan
   const cards = [];
+
+  // Een loop die voor iedere leeruitkomst een kaart maakt met 7 hexagons
   for (let i = 1; i <= outcomes; i++) {
+
+    // Een array om alle hexagons (skills) in op te slaan
+    const hexagons = [];
+    const skillKeys = Object.keys(studentData.outcomes.outcome01.skills);
+
+    // Een loop die voor iedere hexagon (skill) een random kleur kiest en bepaalt of de lege of gevulde hexagon weergegeven wordy afhankelijk van of de skill behaald is
+    for (let j = 0; j < 7; j++) {
+      const skillKey = skillKeys[j % skillKeys.length]; // Get the skill key like "skill01"
+      const skill = studentData.outcomes.outcome01.skills[skillKey];
+      const color = getRandomColor();
+      hexagons.push(
+        <div key={j} className={styles[`skill0${j + 1}`]} dangerouslySetInnerHTML={{ __html: getHexagonSVG(skill.claimed, color, skillKey) }}></div>
+      );
+    }
+
     // Voeg elke kaart toe aan de array. Elke kaart krijgt:
     // - Een unieke key voor React
     // - Een algemene 'card' klasse voor de basisstijl
@@ -26,27 +278,7 @@ export default function Home() {
       <div key={i} className={`${styles.card} ${styles[`card${String(i).padStart(2, '0')}`]}`}>
         <div className={styles.outcomeName}>Leeruitkomst</div>
         <div className={styles.skillsContainer}>
-          <svg width="93" height="107" fill="none" xmlns="http://www.w3.org/2000/svg" className={styles.skill01}>
-            <path fill-rule="evenodd" clip-rule="evenodd" d="M46.296 1.155 1 27.306V79.61l45.296 26.151L91.59 79.609V27.306L46.296 1.155ZM92.59 26.729 46.296 0 0 26.729v53.457l46.296 26.729L92.59 80.186V26.73Z" fill="#000"/>
-          </svg>
-          <svg width="93" height="107" fill="none" xmlns="http://www.w3.org/2000/svg" className={styles.skill02}>
-            <path fill-rule="evenodd" clip-rule="evenodd" d="M46.296 1.155 1 27.306V79.61l45.296 26.151L91.59 79.609V27.306L46.296 1.155ZM92.59 26.729 46.296 0 0 26.729v53.457l46.296 26.729L92.59 80.186V26.73Z" fill="#000"/>
-          </svg>
-          <svg width="93" height="107" fill="none" xmlns="http://www.w3.org/2000/svg" className={styles.skill03}>
-            <path fill-rule="evenodd" clip-rule="evenodd" d="M46.296 1.155 1 27.306V79.61l45.296 26.151L91.59 79.609V27.306L46.296 1.155ZM92.59 26.729 46.296 0 0 26.729v53.457l46.296 26.729L92.59 80.186V26.73Z" fill="#000"/>
-          </svg>
-          <svg width="93" height="107" fill="none" xmlns="http://www.w3.org/2000/svg" className={styles.skill04}>
-            <path fill-rule="evenodd" clip-rule="evenodd" d="M46.296 1.155 1 27.306V79.61l45.296 26.151L91.59 79.609V27.306L46.296 1.155ZM92.59 26.729 46.296 0 0 26.729v53.457l46.296 26.729L92.59 80.186V26.73Z" fill="#000"/>
-          </svg>
-          <svg width="93" height="107" fill="none" xmlns="http://www.w3.org/2000/svg" className={styles.skill05}>
-            <path fill-rule="evenodd" clip-rule="evenodd" d="M46.296 1.155 1 27.306V79.61l45.296 26.151L91.59 79.609V27.306L46.296 1.155ZM92.59 26.729 46.296 0 0 26.729v53.457l46.296 26.729L92.59 80.186V26.73Z" fill="#000"/>
-          </svg>
-          <svg width="93" height="107" fill="none" xmlns="http://www.w3.org/2000/svg" className={styles.skill06}>
-            <path fill-rule="evenodd" clip-rule="evenodd" d="M46.296 1.155 1 27.306V79.61l45.296 26.151L91.59 79.609V27.306L46.296 1.155ZM92.59 26.729 46.296 0 0 26.729v53.457l46.296 26.729L92.59 80.186V26.73Z" fill="#000"/>
-          </svg>
-          <svg width="93" height="107" fill="none" xmlns="http://www.w3.org/2000/svg" className={styles.skill07}>
-            <path fill-rule="evenodd" clip-rule="evenodd" d="M46.296 1.155 1 27.306V79.61l45.296 26.151L91.59 79.609V27.306L46.296 1.155ZM92.59 26.729 46.296 0 0 26.729v53.457l46.296 26.729L92.59 80.186V26.73Z" fill="#000"/>
-          </svg>
+          {hexagons}
         </div>
         <div className={styles.outcomeGrade}>Oriënterend</div>
       </div>

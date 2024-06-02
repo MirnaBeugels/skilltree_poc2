@@ -12,6 +12,7 @@ body {
               -10vh, 
               radial-gradient(134.61% 96.81% at 0% 1.81%, #130B43 0%, #140C17 100%)
               );
+  font-weight: 300;
 }
 
 .pageTitle {
