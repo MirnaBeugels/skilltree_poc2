@@ -10,8 +10,1100 @@ const studentData = {
   },
   outcomes: {
     outcome01: {
-      name: "The name of this outcome",
-      grade: 8, // Beoordeling per leeruitkomst
+      name: "Leeruitkomst 1", 
+      grade: "Oriënterend",
+      definition: "Leeruitkomst definitie hier",
+      skills: {
+        Skill01: {
+          skill: "Programmeren",
+          definition: "Definitie gegeven",
+          claimed: false,
+          activities: {
+            activity01: {
+              name: "naam van activiteit",
+              explanation: "uitleg wat je kunt doen voor deze activiteit",
+              sources: {
+                source01: "url to source",
+                source02: "url to source",
+                source03: "url to source"
+              }
+            },
+            activity02: {
+              name: "naam van activiteit",
+              explanation: "",
+              sources: {
+                source01: "url to source",
+                source02: "url to source",
+                source03: "url to source"
+              }
+            }
+          }
+        }, 
+        Skill02: {
+          skill: "Tweede Skill",
+          definition: "Definitie van de tweede skill",
+          claimed: false,
+          activities: {
+            activity01: {
+              name: "naam van activiteit",
+              explanation: "uitleg wat je kunt doen voor deze activiteit",
+              sources: {
+                source01: "url to source",
+                source02: "url to source",
+                source03: "url to source"
+              }
+            },
+            activity02: {
+              name: "naam van activiteit",
+              explanation: "",
+              sources: {
+                source01: "url to source",
+                source02: "url to source",
+                source03: "url to source"
+              }
+            }
+          }
+        }, 
+        Skill03: {
+          skill: "Derde Skill",
+          definition: "Definitie van de derde skill",
+          claimed: true,
+          activities: {
+            activity01: {
+              name: "naam van activiteit",
+              explanation: "uitleg wat je kunt doen voor deze activiteit",
+              sources: {
+                source01: "url to source",
+                source02: "url to source",
+                source03: "url to source"
+              }
+            },
+            activity02: {
+              name: "naam van activiteit",
+              explanation: "",
+              sources: {
+                source01: "url to source",
+                source02: "url to source",
+                source03: "url to source"
+              }
+            }
+          }
+        }, 
+        Skill04: {
+          skill: "Vierde Skill",
+          definition: "Definitie van de vierde skill",
+          claimed: true,
+          activities: {
+            activity01: {
+              name: "naam van activiteit",
+              explanation: "uitleg wat je kunt doen voor deze activiteit",
+              sources: {
+                source01: "url to source",
+                source02: "url to source",
+                source03: "url to source"
+              }
+            },
+            activity02: {
+              name: "naam van activiteit",
+              explanation: "",
+              sources: {
+                source01: "url to source",
+                source02: "url to source",
+                source03: "url to source"
+              }
+            }
+          }
+        }, 
+        Skill05: {
+          skill: "Vijfde Skill",
+          definition: "Definitie van de vijfde skill",
+          claimed: true,
+          activities: {
+            activity01: {
+              name: "naam van activiteit",
+              explanation: "uitleg wat je kunt doen voor deze activiteit",
+              sources: {
+                source01: "url to source",
+                source02: "url to source",
+                source03: "url to source"
+              }
+            },
+            activity02: {
+              name: "naam van activiteit",
+              explanation: "",
+              sources: {
+                source01: "url to source",
+                source02: "url to source",
+                source03: "url to source"
+              }
+            }
+          }
+        }, 
+        Skill06: {
+          skill: "Zesde Skill",
+          definition: "Definitie van de zesde skill",
+          claimed: false,
+          activities: {
+            activity01: {
+              name: "naam van activiteit",
+              explanation: "uitleg wat je kunt doen voor deze activiteit",
+              sources: {
+                source01: "url to source",
+                source02: "url to source",
+                source03: "url to source"
+              }
+            },
+            activity02: {
+              name: "naam van activiteit",
+              explanation: "",
+              sources: {
+                source01: "url to source",
+                source02: "url to source",
+                source03: "url to source"
+              }
+            }
+          }
+        }, 
+        Skill07: {
+          skill: "Zevende Skill",
+          definition: "Definitie van de zevende skill",
+          claimed: false,
+          activities: {
+            activity01: {
+              name: "naam van activiteit",
+              explanation: "uitleg wat je kunt doen voor deze activiteit",
+              sources: {
+                source01: "url to source",
+                source02: "url to source",
+                source03: "url to source"
+              }
+            },
+            activity02: {
+              name: "naam van activiteit",
+              explanation: "",
+              sources: {
+                source01: "url to source",
+                source02: "url to source",
+                source03: "url to source"
+              }
+            }
+          }
+        }, 
+      } 
+    },
+    outcome02: {
+      name: "Leeruitkomst 2",
+      grade: "Beginnend",
+      definition: "Leeruitkomst definitie hier", // Definitie van de leeruitkomst
+      skills: {
+        Skill01: {
+          skill: "Programmeren",
+          definition: "Definitie gegeven",
+          claimed: true,
+          activities: {
+            activity01: {
+              name: "naam van activiteit",
+              explanation: "uitleg wat je kunt doen voor deze activiteit",
+              sources: {
+                source01: "url to source",
+                source02: "url to source",
+                source03: "url to source"
+              }
+            },
+            activity02: {
+              name: "naam van activiteit",
+              explanation: "",
+              sources: {
+                source01: "url to source",
+                source02: "url to source",
+                source03: "url to source"
+              }
+            }
+          }
+        }, 
+        Skill02: {
+          skill: "Tweede Skill",
+          definition: "Definitie van de tweede skill",
+          claimed: false,
+          activities: {
+            activity01: {
+              name: "naam van activiteit",
+              explanation: "uitleg wat je kunt doen voor deze activiteit",
+              sources: {
+                source01: "url to source",
+                source02: "url to source",
+                source03: "url to source"
+              }
+            },
+            activity02: {
+              name: "naam van activiteit",
+              explanation: "",
+              sources: {
+                source01: "url to source",
+                source02: "url to source",
+                source03: "url to source"
+              }
+            }
+          }
+        }, 
+        Skill03: {
+          skill: "Derde Skill",
+          definition: "Definitie van de derde skill",
+          claimed: true,
+          activities: {
+            activity01: {
+              name: "naam van activiteit",
+              explanation: "uitleg wat je kunt doen voor deze activiteit",
+              sources: {
+                source01: "url to source",
+                source02: "url to source",
+                source03: "url to source"
+              }
+            },
+            activity02: {
+              name: "naam van activiteit",
+              explanation: "",
+              sources: {
+                source01: "url to source",
+                source02: "url to source",
+                source03: "url to source"
+              }
+            }
+          }
+        }, 
+        Skill04: {
+          skill: "Vierde Skill",
+          definition: "Definitie van de vierde skill",
+          claimed: false,
+          activities: {
+            activity01: {
+              name: "naam van activiteit",
+              explanation: "uitleg wat je kunt doen voor deze activiteit",
+              sources: {
+                source01: "url to source",
+                source02: "url to source",
+                source03: "url to source"
+              }
+            },
+            activity02: {
+              name: "naam van activiteit",
+              explanation: "",
+              sources: {
+                source01: "url to source",
+                source02: "url to source",
+                source03: "url to source"
+              }
+            }
+          }
+        }, 
+        Skill05: {
+          skill: "Vijfde Skill",
+          definition: "Definitie van de vijfde skill",
+          claimed: true,
+          activities: {
+            activity01: {
+              name: "naam van activiteit",
+              explanation: "uitleg wat je kunt doen voor deze activiteit",
+              sources: {
+                source01: "url to source",
+                source02: "url to source",
+                source03: "url to source"
+              }
+            },
+            activity02: {
+              name: "naam van activiteit",
+              explanation: "",
+              sources: {
+                source01: "url to source",
+                source02: "url to source",
+                source03: "url to source"
+              }
+            }
+          }
+        }, 
+        Skill06: {
+          skill: "Zesde Skill",
+          definition: "Definitie van de zesde skill",
+          claimed: true,
+          activities: {
+            activity01: {
+              name: "naam van activiteit",
+              explanation: "uitleg wat je kunt doen voor deze activiteit",
+              sources: {
+                source01: "url to source",
+                source02: "url to source",
+                source03: "url to source"
+              }
+            },
+            activity02: {
+              name: "naam van activiteit",
+              explanation: "",
+              sources: {
+                source01: "url to source",
+                source02: "url to source",
+                source03: "url to source"
+              }
+            }
+          }
+        }, 
+        Skill07: {
+          skill: "Zevende Skill",
+          definition: "Definitie van de zevende skill",
+          claimed: true,
+          activities: {
+            activity01: {
+              name: "naam van activiteit",
+              explanation: "uitleg wat je kunt doen voor deze activiteit",
+              sources: {
+                source01: "url to source",
+                source02: "url to source",
+                source03: "url to source"
+              }
+            },
+            activity02: {
+              name: "naam van activiteit",
+              explanation: "",
+              sources: {
+                source01: "url to source",
+                source02: "url to source",
+                source03: "url to source"
+              }
+            }
+          }
+        }, 
+      } 
+    },
+    outcome03: {
+      name: "Leeruitkomst 3",
+      grade: "Gevorderd",
+      definition: "Leeruitkomst definitie hier", // Definitie van de leeruitkomst
+      skills: {
+        Skill01: {
+          skill: "Programmeren",
+          definition: "Definitie gegeven",
+          claimed: false,
+          activities: {
+            activity01: {
+              name: "naam van activiteit",
+              explanation: "uitleg wat je kunt doen voor deze activiteit",
+              sources: {
+                source01: "url to source",
+                source02: "url to source",
+                source03: "url to source"
+              }
+            },
+            activity02: {
+              name: "naam van activiteit",
+              explanation: "",
+              sources: {
+                source01: "url to source",
+                source02: "url to source",
+                source03: "url to source"
+              }
+            }
+          }
+        }, 
+        Skill02: {
+          skill: "Tweede Skill",
+          definition: "Definitie van de tweede skill",
+          claimed: true,
+          activities: {
+            activity01: {
+              name: "naam van activiteit",
+              explanation: "uitleg wat je kunt doen voor deze activiteit",
+              sources: {
+                source01: "url to source",
+                source02: "url to source",
+                source03: "url to source"
+              }
+            },
+            activity02: {
+              name: "naam van activiteit",
+              explanation: "",
+              sources: {
+                source01: "url to source",
+                source02: "url to source",
+                source03: "url to source"
+              }
+            }
+          }
+        }, 
+        Skill03: {
+          skill: "Derde Skill",
+          definition: "Definitie van de derde skill",
+          claimed: true,
+          activities: {
+            activity01: {
+              name: "naam van activiteit",
+              explanation: "uitleg wat je kunt doen voor deze activiteit",
+              sources: {
+                source01: "url to source",
+                source02: "url to source",
+                source03: "url to source"
+              }
+            },
+            activity02: {
+              name: "naam van activiteit",
+              explanation: "",
+              sources: {
+                source01: "url to source",
+                source02: "url to source",
+                source03: "url to source"
+              }
+            }
+          }
+        }, 
+        Skill04: {
+          skill: "Vierde Skill",
+          definition: "Definitie van de vierde skill",
+          claimed: true,
+          activities: {
+            activity01: {
+              name: "naam van activiteit",
+              explanation: "uitleg wat je kunt doen voor deze activiteit",
+              sources: {
+                source01: "url to source",
+                source02: "url to source",
+                source03: "url to source"
+              }
+            },
+            activity02: {
+              name: "naam van activiteit",
+              explanation: "",
+              sources: {
+                source01: "url to source",
+                source02: "url to source",
+                source03: "url to source"
+              }
+            }
+          }
+        }, 
+        Skill05: {
+          skill: "Vijfde Skill",
+          definition: "Definitie van de vijfde skill",
+          claimed: true,
+          activities: {
+            activity01: {
+              name: "naam van activiteit",
+              explanation: "uitleg wat je kunt doen voor deze activiteit",
+              sources: {
+                source01: "url to source",
+                source02: "url to source",
+                source03: "url to source"
+              }
+            },
+            activity02: {
+              name: "naam van activiteit",
+              explanation: "",
+              sources: {
+                source01: "url to source",
+                source02: "url to source",
+                source03: "url to source"
+              }
+            }
+          }
+        }, 
+        Skill06: {
+          skill: "Zesde Skill",
+          definition: "Definitie van de zesde skill",
+          claimed: true,
+          activities: {
+            activity01: {
+              name: "naam van activiteit",
+              explanation: "uitleg wat je kunt doen voor deze activiteit",
+              sources: {
+                source01: "url to source",
+                source02: "url to source",
+                source03: "url to source"
+              }
+            },
+            activity02: {
+              name: "naam van activiteit",
+              explanation: "",
+              sources: {
+                source01: "url to source",
+                source02: "url to source",
+                source03: "url to source"
+              }
+            }
+          }
+        }, 
+        Skill07: {
+          skill: "Zevende Skill",
+          definition: "Definitie van de zevende skill",
+          claimed: true,
+          activities: {
+            activity01: {
+              name: "naam van activiteit",
+              explanation: "uitleg wat je kunt doen voor deze activiteit",
+              sources: {
+                source01: "url to source",
+                source02: "url to source",
+                source03: "url to source"
+              }
+            },
+            activity02: {
+              name: "naam van activiteit",
+              explanation: "",
+              sources: {
+                source01: "url to source",
+                source02: "url to source",
+                source03: "url to source"
+              }
+            }
+          }
+        }, 
+      } 
+    },
+    outcome04: {
+      name: "Leeruitkomst 4",
+      grade: "Gevorderd",
+      definition: "Leeruitkomst definitie hier", // Definitie van de leeruitkomst
+      skills: {
+        Skill01: {
+          skill: "Programmeren",
+          definition: "Definitie gegeven",
+          claimed: false,
+          activities: {
+            activity01: {
+              name: "naam van activiteit",
+              explanation: "uitleg wat je kunt doen voor deze activiteit",
+              sources: {
+                source01: "url to source",
+                source02: "url to source",
+                source03: "url to source"
+              }
+            },
+            activity02: {
+              name: "naam van activiteit",
+              explanation: "",
+              sources: {
+                source01: "url to source",
+                source02: "url to source",
+                source03: "url to source"
+              }
+            }
+          }
+        }, 
+        Skill02: {
+          skill: "Tweede Skill",
+          definition: "Definitie van de tweede skill",
+          claimed: false,
+          activities: {
+            activity01: {
+              name: "naam van activiteit",
+              explanation: "uitleg wat je kunt doen voor deze activiteit",
+              sources: {
+                source01: "url to source",
+                source02: "url to source",
+                source03: "url to source"
+              }
+            },
+            activity02: {
+              name: "naam van activiteit",
+              explanation: "",
+              sources: {
+                source01: "url to source",
+                source02: "url to source",
+                source03: "url to source"
+              }
+            }
+          }
+        }, 
+        Skill03: {
+          skill: "Derde Skill",
+          definition: "Definitie van de derde skill",
+          claimed: false,
+          activities: {
+            activity01: {
+              name: "naam van activiteit",
+              explanation: "uitleg wat je kunt doen voor deze activiteit",
+              sources: {
+                source01: "url to source",
+                source02: "url to source",
+                source03: "url to source"
+              }
+            },
+            activity02: {
+              name: "naam van activiteit",
+              explanation: "",
+              sources: {
+                source01: "url to source",
+                source02: "url to source",
+                source03: "url to source"
+              }
+            }
+          }
+        }, 
+        Skill04: {
+          skill: "Vierde Skill",
+          definition: "Definitie van de vierde skill",
+          claimed: false,
+          activities: {
+            activity01: {
+              name: "naam van activiteit",
+              explanation: "uitleg wat je kunt doen voor deze activiteit",
+              sources: {
+                source01: "url to source",
+                source02: "url to source",
+                source03: "url to source"
+              }
+            },
+            activity02: {
+              name: "naam van activiteit",
+              explanation: "",
+              sources: {
+                source01: "url to source",
+                source02: "url to source",
+                source03: "url to source"
+              }
+            }
+          }
+        }, 
+        Skill05: {
+          skill: "Vijfde Skill",
+          definition: "Definitie van de vijfde skill",
+          claimed: false,
+          activities: {
+            activity01: {
+              name: "naam van activiteit",
+              explanation: "uitleg wat je kunt doen voor deze activiteit",
+              sources: {
+                source01: "url to source",
+                source02: "url to source",
+                source03: "url to source"
+              }
+            },
+            activity02: {
+              name: "naam van activiteit",
+              explanation: "",
+              sources: {
+                source01: "url to source",
+                source02: "url to source",
+                source03: "url to source"
+              }
+            }
+          }
+        }, 
+        Skill06: {
+          skill: "Zesde Skill",
+          definition: "Definitie van de zesde skill",
+          claimed: true,
+          activities: {
+            activity01: {
+              name: "naam van activiteit",
+              explanation: "uitleg wat je kunt doen voor deze activiteit",
+              sources: {
+                source01: "url to source",
+                source02: "url to source",
+                source03: "url to source"
+              }
+            },
+            activity02: {
+              name: "naam van activiteit",
+              explanation: "",
+              sources: {
+                source01: "url to source",
+                source02: "url to source",
+                source03: "url to source"
+              }
+            }
+          }
+        }, 
+        Skill07: {
+          skill: "Zevende Skill",
+          definition: "Definitie van de zevende skill",
+          claimed: true,
+          activities: {
+            activity01: {
+              name: "naam van activiteit",
+              explanation: "uitleg wat je kunt doen voor deze activiteit",
+              sources: {
+                source01: "url to source",
+                source02: "url to source",
+                source03: "url to source"
+              }
+            },
+            activity02: {
+              name: "naam van activiteit",
+              explanation: "",
+              sources: {
+                source01: "url to source",
+                source02: "url to source",
+                source03: "url to source"
+              }
+            }
+          }
+        }, 
+      } 
+    },
+    outcome05: {
+      name: "Leeruitkomst 5",
+      grade: "Beginnend",
+      definition: "Leeruitkomst definitie hier", // Definitie van de leeruitkomst
+      skills: {
+        Skill01: {
+          skill: "Programmeren",
+          definition: "Definitie gegeven",
+          claimed: true,
+          activities: {
+            activity01: {
+              name: "naam van activiteit",
+              explanation: "uitleg wat je kunt doen voor deze activiteit",
+              sources: {
+                source01: "url to source",
+                source02: "url to source",
+                source03: "url to source"
+              }
+            },
+            activity02: {
+              name: "naam van activiteit",
+              explanation: "",
+              sources: {
+                source01: "url to source",
+                source02: "url to source",
+                source03: "url to source"
+              }
+            }
+          }
+        }, 
+        Skill02: {
+          skill: "Tweede Skill",
+          definition: "Definitie van de tweede skill",
+          claimed: false,
+          activities: {
+            activity01: {
+              name: "naam van activiteit",
+              explanation: "uitleg wat je kunt doen voor deze activiteit",
+              sources: {
+                source01: "url to source",
+                source02: "url to source",
+                source03: "url to source"
+              }
+            },
+            activity02: {
+              name: "naam van activiteit",
+              explanation: "",
+              sources: {
+                source01: "url to source",
+                source02: "url to source",
+                source03: "url to source"
+              }
+            }
+          }
+        }, 
+        Skill03: {
+          skill: "Derde Skill",
+          definition: "Definitie van de derde skill",
+          claimed: true,
+          activities: {
+            activity01: {
+              name: "naam van activiteit",
+              explanation: "uitleg wat je kunt doen voor deze activiteit",
+              sources: {
+                source01: "url to source",
+                source02: "url to source",
+                source03: "url to source"
+              }
+            },
+            activity02: {
+              name: "naam van activiteit",
+              explanation: "",
+              sources: {
+                source01: "url to source",
+                source02: "url to source",
+                source03: "url to source"
+              }
+            }
+          }
+        }, 
+        Skill04: {
+          skill: "Vierde Skill",
+          definition: "Definitie van de vierde skill",
+          claimed: false,
+          activities: {
+            activity01: {
+              name: "naam van activiteit",
+              explanation: "uitleg wat je kunt doen voor deze activiteit",
+              sources: {
+                source01: "url to source",
+                source02: "url to source",
+                source03: "url to source"
+              }
+            },
+            activity02: {
+              name: "naam van activiteit",
+              explanation: "",
+              sources: {
+                source01: "url to source",
+                source02: "url to source",
+                source03: "url to source"
+              }
+            }
+          }
+        }, 
+        Skill05: {
+          skill: "Vijfde Skill",
+          definition: "Definitie van de vijfde skill",
+          claimed: true,
+          activities: {
+            activity01: {
+              name: "naam van activiteit",
+              explanation: "uitleg wat je kunt doen voor deze activiteit",
+              sources: {
+                source01: "url to source",
+                source02: "url to source",
+                source03: "url to source"
+              }
+            },
+            activity02: {
+              name: "naam van activiteit",
+              explanation: "",
+              sources: {
+                source01: "url to source",
+                source02: "url to source",
+                source03: "url to source"
+              }
+            }
+          }
+        }, 
+        Skill06: {
+          skill: "Zesde Skill",
+          definition: "Definitie van de zesde skill",
+          claimed: false,
+          activities: {
+            activity01: {
+              name: "naam van activiteit",
+              explanation: "uitleg wat je kunt doen voor deze activiteit",
+              sources: {
+                source01: "url to source",
+                source02: "url to source",
+                source03: "url to source"
+              }
+            },
+            activity02: {
+              name: "naam van activiteit",
+              explanation: "",
+              sources: {
+                source01: "url to source",
+                source02: "url to source",
+                source03: "url to source"
+              }
+            }
+          }
+        }, 
+        Skill07: {
+          skill: "Zevende Skill",
+          definition: "Definitie van de zevende skill",
+          claimed: true,
+          activities: {
+            activity01: {
+              name: "naam van activiteit",
+              explanation: "uitleg wat je kunt doen voor deze activiteit",
+              sources: {
+                source01: "url to source",
+                source02: "url to source",
+                source03: "url to source"
+              }
+            },
+            activity02: {
+              name: "naam van activiteit",
+              explanation: "",
+              sources: {
+                source01: "url to source",
+                source02: "url to source",
+                source03: "url to source"
+              }
+            }
+          }
+        }, 
+      } 
+    },
+    outcome06: {
+      name: "Leeruitkomst 6",
+      grade: "Geoefend",
+      definition: "Leeruitkomst definitie hier", // Definitie van de leeruitkomst
+      skills: {
+        Skill01: {
+          skill: "Programmeren",
+          definition: "Definitie gegeven",
+          claimed: true,
+          activities: {
+            activity01: {
+              name: "naam van activiteit",
+              explanation: "uitleg wat je kunt doen voor deze activiteit",
+              sources: {
+                source01: "url to source",
+                source02: "url to source",
+                source03: "url to source"
+              }
+            },
+            activity02: {
+              name: "naam van activiteit",
+              explanation: "",
+              sources: {
+                source01: "url to source",
+                source02: "url to source",
+                source03: "url to source"
+              }
+            }
+          }
+        }, 
+        Skill02: {
+          skill: "Tweede Skill",
+          definition: "Definitie van de tweede skill",
+          claimed: false,
+          activities: {
+            activity01: {
+              name: "naam van activiteit",
+              explanation: "uitleg wat je kunt doen voor deze activiteit",
+              sources: {
+                source01: "url to source",
+                source02: "url to source",
+                source03: "url to source"
+              }
+            },
+            activity02: {
+              name: "naam van activiteit",
+              explanation: "",
+              sources: {
+                source01: "url to source",
+                source02: "url to source",
+                source03: "url to source"
+              }
+            }
+          }
+        }, 
+        Skill03: {
+          skill: "Derde Skill",
+          definition: "Definitie van de derde skill",
+          claimed: true,
+          activities: {
+            activity01: {
+              name: "naam van activiteit",
+              explanation: "uitleg wat je kunt doen voor deze activiteit",
+              sources: {
+                source01: "url to source",
+                source02: "url to source",
+                source03: "url to source"
+              }
+            },
+            activity02: {
+              name: "naam van activiteit",
+              explanation: "",
+              sources: {
+                source01: "url to source",
+                source02: "url to source",
+                source03: "url to source"
+              }
+            }
+          }
+        }, 
+        Skill04: {
+          skill: "Vierde Skill",
+          definition: "Definitie van de vierde skill",
+          claimed: false,
+          activities: {
+            activity01: {
+              name: "naam van activiteit",
+              explanation: "uitleg wat je kunt doen voor deze activiteit",
+              sources: {
+                source01: "url to source",
+                source02: "url to source",
+                source03: "url to source"
+              }
+            },
+            activity02: {
+              name: "naam van activiteit",
+              explanation: "",
+              sources: {
+                source01: "url to source",
+                source02: "url to source",
+                source03: "url to source"
+              }
+            }
+          }
+        }, 
+        Skill05: {
+          skill: "Vijfde Skill",
+          definition: "Definitie van de vijfde skill",
+          claimed: true,
+          activities: {
+            activity01: {
+              name: "naam van activiteit",
+              explanation: "uitleg wat je kunt doen voor deze activiteit",
+              sources: {
+                source01: "url to source",
+                source02: "url to source",
+                source03: "url to source"
+              }
+            },
+            activity02: {
+              name: "naam van activiteit",
+              explanation: "",
+              sources: {
+                source01: "url to source",
+                source02: "url to source",
+                source03: "url to source"
+              }
+            }
+          }
+        }, 
+        Skill06: {
+          skill: "Zesde Skill",
+          definition: "Definitie van de zesde skill",
+          claimed: false,
+          activities: {
+            activity01: {
+              name: "naam van activiteit",
+              explanation: "uitleg wat je kunt doen voor deze activiteit",
+              sources: {
+                source01: "url to source",
+                source02: "url to source",
+                source03: "url to source"
+              }
+            },
+            activity02: {
+              name: "naam van activiteit",
+              explanation: "",
+              sources: {
+                source01: "url to source",
+                source02: "url to source",
+                source03: "url to source"
+              }
+            }
+          }
+        }, 
+        Skill07: {
+          skill: "Zevende Skill",
+          definition: "Definitie van de zevende skill",
+          claimed: true,
+          activities: {
+            activity01: {
+              name: "naam van activiteit",
+              explanation: "uitleg wat je kunt doen voor deze activiteit",
+              sources: {
+                source01: "url to source",
+                source02: "url to source",
+                source03: "url to source"
+              }
+            },
+            activity02: {
+              name: "naam van activiteit",
+              explanation: "",
+              sources: {
+                source01: "url to source",
+                source02: "url to source",
+                source03: "url to source"
+              }
+            }
+          }
+        }, 
+      } 
+    },
+    outcome07: {
+      name: "Leeruitkomst 7",
+      grade: "Oriënterend",
       definition: "Leeruitkomst definitie hier", // Definitie van de leeruitkomst
       skills: {
         Skill01: {
@@ -196,9 +1288,6 @@ const studentData = {
 
 console.log(studentData);
 
-// Het aantal leeruitkomsten (kaarten) dat we willen weergeven
-var outcomes = 7;
-
 // Een array met de 6 illustraties voor in de lege cellen waar geen kaart in zit
 const images = [
   "/iterate.svg",
@@ -250,83 +1339,122 @@ function getHexagonSVG(claimed, color, skillName) {
 
 export default function Home() {
 
-  // Een array om alle kaarten in op te slaan
-  const cards = [];
+  // Haal alle leeruitkomsten op uit de studentData
+  const outcomes = Object.values(studentData.outcomes);
 
-  // Een loop die voor iedere leeruitkomst een kaart maakt met 7 hexagons
-  for (let i = 1; i <= outcomes; i++) {
+  // Maak een array voor de kaarten door de uitkomsten te mappen
+  const cards = outcomes.map((outcome, i) => {
 
-    // Een array om alle hexagons (skills) in op te slaan
-    const hexagons = [];
-    const skillKeys = Object.keys(studentData.outcomes.outcome01.skills);
-
-    // Een loop die voor iedere hexagon (skill) een random kleur kiest en bepaalt of de lege of gevulde hexagon weergegeven wordy afhankelijk van of de skill behaald is
-    for (let j = 0; j < 7; j++) {
-      const skillKey = skillKeys[j % skillKeys.length]; // Get the skill key like "skill01"
-      const skill = studentData.outcomes.outcome01.skills[skillKey];
+    // Maak een array voor de vaardigheden binnen elke leeruitkomst
+    const hexagons = Object.entries(outcome.skills).map(([skillKey, skill], j) => {
+      
+      // Genereer een random kleur voor iedere hexagon (leeruitkomst)
       const color = getRandomColor();
-      hexagons.push(
+
+      // Voeg de hexagon toe aan de array
+      return (
         <div key={j} className={styles[`skill0${j + 1}`]} dangerouslySetInnerHTML={{ __html: getHexagonSVG(skill.claimed, color, skillKey) }}></div>
       );
-    }
+    });
 
-    // Voeg elke kaart toe aan de array. Elke kaart krijgt:
-    // - Een unieke key voor React
-    // - Een algemene 'card' klasse voor de basisstijl
-    // - Een unieke klasse (bijv. card01, card02) voor de zijn eigen plek in het grid
-    cards.push(
-      <div key={i} className={`${styles.card} ${styles[`card${String(i).padStart(2, '0')}`]}`}>
-        <div className={styles.outcomeName}>Leeruitkomst</div>
+    // Maak een kaartje voor elke leeruitkomst met daarop de naam, vaardigheden en de beoordeling
+    return (
+      <div key={i} className={`${styles.card} ${styles[`card${String(i + 1).padStart(2, '0')}`]}`}>
+        <div className={styles.outcomeName}>{outcome.name}</div>
         <div className={styles.skillsContainer}>
           {hexagons}
         </div>
-        <div className={styles.outcomeGrade}>Oriënterend</div>
+        <div className={styles.outcomeGrade}>{outcome.grade
+        
+        
+        }</div>
       </div>
     );
-  }
+  });
 
-  // Dynamisch de grid-template-areas genereren op basis van het aantal uitkomsten
+  // Genereer de grid-template areas op basis van het aantal leeruitkomsten
   const gridTemplateAreas = useMemo(() => {
-    let areas = ''; // String om de grid areas op te slaan
-    const rows = Math.ceil(outcomes / 2); // Bepaal het aantal rijen, er zijn 2 kaarten per rij
-    let cardIndex = 1; // Huidige kaart index om bij te houden welke kaart geplaatst moet worden
-    let oddRowEmptyIndex = 2; // De index van de lege cel in oneven rijen (de derde cel)
-    let evenRowEmptyIndex = 0; // De index van de lege cel in even rijen (de eerste cel)
+    
+    // Een string om de grid area's in op te slaan
+    let areas = ''; 
+    
+    // Bepaal hoeveel rijen er moeten zijn op basis van het aantal leeruitkomsten
+    // In het design zitten 2 kaarten plus 1 lege plaats in een rij, dus deel het aantal leeruitkomsten door 2
+    const rows = Math.ceil(outcomes.length / 2);
+    
+    // De index van de huidige kaart, om bij te houden welke kaart we aan het plaatsen zijn
+    let cardIndex = 1;
 
+    // De lege vakken in het design verspringen, in een oneven rij is de 3e grid-cel leeg
+    let oddRowEmptyIndex = 2;
+
+    // In een even rij is de eerste grid-cel leeg
+    let evenRowEmptyIndex = 0;
+
+    // Loop door elke rij
     for (let row = 0; row < rows; row++) {
-      let rowAreas = ''; // String om de grid areas van de huidige rij op te slaan
+      
+      // Een string om de grid area's van de huidige rij in op te slaan
+      let rowAreas = '';
+
+      // Loop door elke kolom binnen de huidige rij
       for (let col = 0; col < 3; col++) {
-        // Controleer of de huidige cel leeg moet zijn
+
+        // Bepaal of de huidige grid-cel een afbeelding ipv een kaart moet bevatten
+        // Zo ja, dan moeten we een div met afbeelding aan de kaarten array toevoegen
         if ((row % 2 === 0 && col === oddRowEmptyIndex) || (row % 2 !== 0 && col === evenRowEmptyIndex)) {
-          // Voeg een afbeelding toe in plaats van een lege cel
-          const imageIndex = (row + col) % images.length; // Bepaal welke afbeelding te gebruiken
-          const imageClass = col === 0 ? styles.imageLeft : styles.imageRight; // Selecteer de juiste margestijl
+          
+          // Voeg 1 van de afbeeldingen uit de image array toe
+          const imageIndex = (row + col) % images.length;
+
+          // Geef de afbeelding op basis van de huidige grid-cel index de juiste css class
+          // Dit is voor de overflow links en rechts buiten de cardsContainer
+          const imageClass = col === 0 ? styles.imageLeft : styles.imageRight;
+          
+          // Voeg de <div> met afbeelding er toe aan de cards array 
           cards.push(
             <div key={`img${row}${col}`} className={`${styles.imageCell} ${imageClass}`}>
               <img src={images[imageIndex]} alt={`Afbeelding ${imageIndex + 1}`} />
             </div>
           );
+
+          // Voeg de grid area toe aan de rowAreas string
           rowAreas += ` img${row}${col}`;
-        } else if (cardIndex <= outcomes) {
-          // Voeg een kaart toe als er nog kaarten zijn om toe te voegen
+
+        // Wanneer de huidige grid-cell geen afbeelding moet bevatten en als er nog kaarten zijn
+        } else if (cardIndex <= outcomes.length) {
+          
+          // Voeg dan een kaart toe aan de rowAreas string
           rowAreas += ` card${String(cardIndex).padStart(2, '0')}`;
-          cardIndex++; // Verhoog de kaart index
+
+          // Verhoog de kaart index
+          cardIndex++;
+
+          // Als er geen kaarten meer zijn
         } else {
-          rowAreas += ' .'; // Voeg een lege cel toe als er geen kaarten meer zijn
+
+          // Voeg dan een lege grid-cel toe aan de rowAreas string
+          rowAreas += ' .';
         }
+
+        // Voeg een spatie toe tussen de grid-cellen, behalve na de derde cel (laatste cel in een rij)
         if (col < 2) {
-          rowAreas += ' '; // Voeg een spatie toe tussen de cellen, behalve na de laatste cel
+          rowAreas += ' ';
         }
       }
-      areas += `"${rowAreas.trim()}" `; // Voeg de huidige rij toe aan de grid areas
+
+      // Voeg de huidige rij toe aan de grid-areas string
+      areas += `"${rowAreas.trim()}" `;
     }
-    return areas.trim(); // Retourneer de volledige grid areas string
+
+    // Retrourneer de volledige grid areas sting
+    return areas.trim();
   }, [outcomes]);
 
+  // Retourneer de kaarten container met de kaarten en de gegenereerde grid-area-template 
   return (
     <main
       className={styles.cardsContainer}
-      // Stel de grid-template-areas in via inline-styling
       style={{ gridTemplateAreas: gridTemplateAreas }}
     >
       {cards}
