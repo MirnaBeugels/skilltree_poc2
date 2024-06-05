@@ -1,17 +1,16 @@
-import { useMemo } from "react";
+'use client'
+
+import { useMemo, useState, useEffect } from "react";
 import styles from "./page.module.css";
 
 // Een object met de leeruitkomsten, beoordelingen, vaardigheden en definities
 // Deze moet nog vervangen worden door data die opgeslagen wordt in een database, omdat het te complex is voor 1 object.
 const studentData = {
-  student: {
-    naam: "Jan Jansen",
-    studentnummer: "12345678",
-  },
   outcomes: {
     outcome01: {
       name: "Leeruitkomst 1", 
       grade: "Oriënterend",
+      gradeDefinition: "Orienterend betekent",
       definition: "Leeruitkomst definitie hier",
       skills: {
         Skill01: {
@@ -194,7 +193,8 @@ const studentData = {
     outcome02: {
       name: "Leeruitkomst 2",
       grade: "Beginnend",
-      definition: "Leeruitkomst definitie hier", // Definitie van de leeruitkomst
+      gradeDefinition: "Beginnend betekent Lorem ipsum dolor sit amet",
+      definition: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla interdum est eu finibus molestie.", // Definitie van de leeruitkomst
       skills: {
         Skill01: {
           skill: "Programmeren",
@@ -376,6 +376,7 @@ const studentData = {
     outcome03: {
       name: "Leeruitkomst 3",
       grade: "Gevorderd",
+      gradeDefinition: "Gevorderd betekent Lorem ipsum dolor sit amet",
       definition: "Leeruitkomst definitie hier", // Definitie van de leeruitkomst
       skills: {
         Skill01: {
@@ -558,6 +559,7 @@ const studentData = {
     outcome04: {
       name: "Leeruitkomst 4",
       grade: "Gevorderd",
+      gradeDefinition: "Gevorderd betekent Lorem ipsum dolor sit amet",
       definition: "Leeruitkomst definitie hier", // Definitie van de leeruitkomst
       skills: {
         Skill01: {
@@ -740,6 +742,7 @@ const studentData = {
     outcome05: {
       name: "Leeruitkomst 5",
       grade: "Beginnend",
+      gradeDefinition: "Beginnend betekent Lorem ipsum dolor sit amet",
       definition: "Leeruitkomst definitie hier", // Definitie van de leeruitkomst
       skills: {
         Skill01: {
@@ -922,6 +925,7 @@ const studentData = {
     outcome06: {
       name: "Leeruitkomst 6",
       grade: "Geoefend",
+      gradeDefinition: "Geoefend betekent Lorem ipsum dolor sit amet",
       definition: "Leeruitkomst definitie hier", // Definitie van de leeruitkomst
       skills: {
         Skill01: {
@@ -1104,6 +1108,7 @@ const studentData = {
     outcome07: {
       name: "Leeruitkomst 7",
       grade: "Oriënterend",
+      gradeDefinition: "Orienterend betekent Lorem ipsum dolor sit amet",
       definition: "Leeruitkomst definitie hier", // Definitie van de leeruitkomst
       skills: {
         Skill01: {
@@ -1284,9 +1289,7 @@ const studentData = {
       } 
     },
   }
-}
-
-console.log(studentData);
+};
 
 // Een array met de 6 illustraties voor in de lege cellen waar geen kaart in zit
 const images = [
@@ -1308,13 +1311,10 @@ function getRandomColor() {
 }
 
 // Een functie om te bepalen hoe de hexagon eruit ziet > kleur, gevuld/niet gevuld, kleur vd tekst & font-weight zodat het beter leesbaar is
-function getHexagonSVG(claimed, color, skillName) {
-
-  // Wanneer een skill niet behaald is en de lege hexagon weergegeven wordt moet de tekst dezelfde kleur als de hexagon hebben
-  const textColor = claimed ? "#140C2C" : color;
+function getHexagonSVG(claimed, color, skillName, getTextColor) {
   
   // Alle skills moeten dikgedrukt zijn
-  const fontWeight = claimed ? "400" : "400";
+  const fontWeight = "400";
   
   // Wanneer de skill behaald is laten we de gevulde hexagon zien met donkere tekst
   if (claimed) {
@@ -1322,7 +1322,7 @@ function getHexagonSVG(claimed, color, skillName) {
       `<svg width="93" height="107" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path fill-rule="evenodd" clip-rule="evenodd" d="M46.458 1.155 1.162 27.306V79.61l45.296 26.151 45.295-26.151V27.306L46.458 1.155Zm46.295 25.574L46.458 0 .162 26.729v53.457l46.296 26.729 46.295-26.729V26.73Z" fill="${color}"/>
         <path d="m46.573 6 41.136 23.75v47.5L46.573 101 5.436 77.25v-47.5L46.573 6Z" fill="${color}"/>
-        <text x="50%" y="50%" text-anchor="middle" fill="#140C2C" font-size="18" dy=".3em" style="font-weight: ${fontWeight}; text-transform=: capitalize;">${skillName}</text>
+        <text x="50%" y="50%" text-anchor="middle" fill="${getTextColor}" font-size="18" dy=".3em" style="font-weight: ${fontWeight}; text-transform: capitalize;">${skillName}</text>
       </svg>`
     );
   
@@ -1331,7 +1331,7 @@ function getHexagonSVG(claimed, color, skillName) {
     return (
       `<svg width="93" height="107" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path fill-rule="evenodd" clip-rule="evenodd" d="M46.296 1.155 1 27.306V79.61l45.296 26.151L91.59 79.609V27.306L46.296 1.155ZM92.59 26.729 46.296 0 0 26.729v53.457l46.296 26.729L92.59 80.186V26.73Z" fill="${color}"/>
-        <text x="50%" y="50%" text-anchor="middle" fill="${color}" font-size="18" font-weight="bold" dy=".3em" style="font-weight: ${fontWeight}; text-transform=: capitalize;">${skillName}</text>
+        <text x="50%" y="50%" text-anchor="middle" fill="${color}" font-size="18" font-weight="bold" dy=".3em" style="font-weight: ${fontWeight}; text-transform: capitalize;">${skillName}</text>
       </svg>`
     );
   }
@@ -1339,35 +1339,71 @@ function getHexagonSVG(claimed, color, skillName) {
 
 export default function Home() {
 
+  const [colorMap, setColorMap] = useState({});
+  const [textColor, setTextColor] = useState({});
+
+  // Om ervoor te zorgen dat de kleuren niet bij iedere re-render wanneer bijvoorbeeld leeruitkomsten of skills bekeken worden opnieuw geladen worden maken we gebruik van useEffect met een dependency array en local storage
+  useEffect(() => {
+    // Controleer of de kleuren al in de localstorage staan
+    const storedColors = JSON.parse(localStorage.getItem('colorMap'));
+    if (storedColors) {
+      setColorMap(storedColors);
+      setTextColor("#140C2C");
+    } else {
+      // Initialiseer de colormap en sla op in de local storage
+      // We doen dit ook voor de gevulde hexagons tekstkleur zodat deze tegelijk geladen wordt
+      const newColorMap = {};
+      setTextColor("#140C2C");
+      Object.values(studentData.outcomes).forEach((outcome, i) => {
+        Object.entries(outcome.skills).forEach(([skillKey, skill], j) => {
+          newColorMap[`${i}-${skillKey}`] = getRandomColor();
+        });
+      });
+      setColorMap(newColorMap);
+      setTextColor("#140C2C");
+      localStorage.setItem('colorMap', JSON.stringify(newColorMap));
+    }
+
+  }, []);
+
   // Haal alle leeruitkomsten op uit de studentData
   const outcomes = Object.values(studentData.outcomes);
 
-  // Maak een array voor de kaarten door de uitkomsten te mappen
-  const cards = outcomes.map((outcome, i) => {
-
-    // Maak een array voor de vaardigheden binnen elke leeruitkomst
-    const hexagons = Object.entries(outcome.skills).map(([skillKey, skill], j) => {
-      
-      // Genereer een random kleur voor iedere hexagon (leeruitkomst)
-      const color = getRandomColor();
-
-      // Voeg de hexagon toe aan de array
-      return (
-        <div key={j} className={styles[`skill0${j + 1}`]} dangerouslySetInnerHTML={{ __html: getHexagonSVG(skill.claimed, color, skillKey) }}></div>
-      );
-    });
+ // Maak een array voor de kaarten door de uitkomsten te mappen
+ const cards = outcomes.map((outcome, i) => {
+  // Create an array of hexagons for each outcome
+  const hexagons = Object.entries(outcome.skills).map(([skillKey, skill], j) => {
+    const color = colorMap[`${i}-${skillKey}`];
+    const getTextColor = textColor;
+    return (
+      <div key={j} className={styles[`skill0${j + 1}`]} dangerouslySetInnerHTML={{ __html: getHexagonSVG(skill.claimed, color, skillKey, getTextColor) }}></div>
+    );
+  });
 
     // Maak een kaartje voor elke leeruitkomst met daarop de naam, vaardigheden en de beoordeling
     return (
       <div key={i} className={`${styles.card} ${styles[`card${String(i + 1).padStart(2, '0')}`]}`}>
-        <div className={styles.outcomeName}>{outcome.name}</div>
+        <div className={styles.popoverWrapper}>
+          <div className={styles.outcomeName}>{outcome.name}</div>
+          <div className={styles.popoverBelow}>
+            <div className={styles.popoverArrowUp}></div>
+            <div className={styles.popoverContent}>
+              {outcome.definition}
+            </div>
+          </div>
+        </div>
         <div className={styles.skillsContainer}>
           {hexagons}
         </div>
-        <div className={styles.outcomeGrade}>{outcome.grade
-        
-        
-        }</div>
+        <div className={styles.popoverWrapper}>
+          <div className={styles.popoverAbove}>
+            <div className={styles.popoverContent}>
+              {outcome.gradeDefinition}
+            </div>
+            <div className={styles.popoverArrowDown}></div>
+          </div>
+          <div className={styles.outcomeGrade}>{outcome.grade}</div>
+        </div>
       </div>
     );
   });
