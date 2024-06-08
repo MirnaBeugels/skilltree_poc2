@@ -1,6 +1,8 @@
 'use client'
 
 import { useMemo, useState, useEffect } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faXmark, faChevronDown, faChevronUp } from "@fortawesome/free-solid-svg-icons";
 import styles from "./page.module.css";
 
 // Een object met de leeruitkomsten, beoordelingen, vaardigheden en definities
@@ -1430,7 +1432,7 @@ export default function Home() {
     return (
       <div key={i} className={`${styles.card} ${styles[`card${String(i + 1).padStart(2, '0')}`]}`}>
         <div className={styles.popoverWrapper}>
-          <div className={styles.outcomeName}>{outcome.name}</div>
+          <h2 className={styles.outcomeName}>{outcome.name}</h2>
           <div className={styles.popoverBelow}>
             <div className={styles.popoverArrowUp}></div>
             <div className={styles.popoverContent}>
@@ -1448,7 +1450,7 @@ export default function Home() {
             </div>
             <div className={styles.popoverArrowDown}></div>
           </div>
-          <div className={styles.outcomeGrade}>{outcome.grade}</div>
+          <h2 className={styles.outcomeGrade}>{outcome.grade}</h2>
         </div>
       </div>
     );
@@ -1552,7 +1554,7 @@ export default function Home() {
               <p>{selectedSkill.definition}</p>
             </div>
             <div className={styles.skillBody}>
-            <h3>Activities</h3>
+              <h3>Activities</h3>
               <ul className={styles.accordion}>
                 {/* Map alle activities van de skill in een eigen list item */}
                 {Object.entries(selectedSkill.activities).map(([activityKey, activity]) => (
@@ -1560,6 +1562,7 @@ export default function Home() {
                     {/* Wanneer je op de header div klikt wordt de status van openActivity aangepast naar true/false */}
                     <div className={styles.accordionHeader} onClick={() => activityToggle(activityKey)}>
                       <h4>{activity.name}</h4>
+                      <div><FontAwesomeIcon icon={faChevronDown} size="lg" /></div>
                     </div>
                     {/* Wanneer openActivity true is wordt de content van de activity weergegeven, anders niet */}
                     {openActivity === activityKey && (
@@ -1579,7 +1582,7 @@ export default function Home() {
           </div>
           <div className={styles.skillClose}>
             {/* Roep de skillToggle functie aan om de modal te sluiten */}
-            <button onClick={skillToggle}>Sluiten</button>
+            <FontAwesomeIcon icon={faXmark} onClick={skillToggle} size="xl" />
           </div>
         </div>
       </div> }

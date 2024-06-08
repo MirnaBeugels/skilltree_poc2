@@ -75,7 +75,6 @@
 
 .outcomeName {
     color: #C5CBFC;
-    font-size: 2rem;
     text-align: center;
     position: relative;
     display: inline-block;
@@ -89,19 +88,8 @@
   cursor: pointer;
 }
 
-/* .outcomeName:hover::after {
-  content: '';
-  position: absolute;
-  width: 100%;
-  height: 2px;
-  bottom: -4px; 
-  left: 0;
-  background: linear-gradient(90deg, rgba(183, 88, 241, 1) 0%, rgba(29, 106, 255, 1) 50%, rgba(29, 214, 255, 1) 100%);
-} */
-
 .outcomeGrade {
     color: #C5CBFC;
-    font-size: 2rem;
     text-align: center
 }
 
@@ -221,6 +209,7 @@
   flex: 1;
   display: flex;
   flex-direction: column;
+  padding: 40px 60px;
 }
 
 .skillHeader, .skillBody {
@@ -235,4 +224,38 @@
   display: flex;
   align-items: flex-start;
   padding: 10px;
+}
+
+.skillBody h3 {
+  padding: 16px 0px;
+}
+
+ul.accordion, .accordionContent ul {
+  list-style-type: none;
+}
+
+.accordionContent p::first-letter {
+  text-transform: capitalize;
+}
+
+.accordionHeader {
+  display: flex;
+  padding: 16px 0px;
+}
+
+.accordionHeader h4 {
+  flex: 1;
+}
+
+.accordion {
+  border-top: #1D6AFF40 1px solid;
+}
+
+.accordionItem {
+  border-bottom: #1D6AFF40 1px solid;
+}
+
+.accordionContent {
+  color: #E8E9EB;
+  padding-bottom: 24px;
 }

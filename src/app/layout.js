@@ -13,7 +13,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={rubik.className}>
-        <div className={`${play.className} pageTitle`}>SkillTree/Software/Semester2</div>
+        <h1 className={`${play.className} pageTitle`}>SkillTree/Software/Semester2</h1>
           {children}
         <div className={rubik.className}></div>
       </body>
