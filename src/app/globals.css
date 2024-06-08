@@ -44,6 +44,25 @@ h3 { font-size: 1.25rem }
 h4 { font-size: 0.875rem; font-weight: 700; color: #E8E9EB;}
 
 a {
-  color: #B758F1;
+  color: #B758F1; /* Layer 1 color */
+  position: relative;
+  text-decoration: none;
+  background: linear-gradient(to right, #B758F1, #1DD6FF);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-transform: capitalize;
 }
+
+a:hover {
+  color: #B758F1; /* Layer 1 color */
+  position: relative;
+  text-decoration: none;
+  background: #B758F1;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+
 

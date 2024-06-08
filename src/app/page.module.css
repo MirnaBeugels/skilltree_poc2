@@ -22,6 +22,10 @@
     position: relative;
 }
 
+.skillsContainer div svg {
+  cursor: pointer;
+}
+
 /* Specifieke klassen voor elke kaart, gebruikt voor de positionering in het Grid */
 /* Heb je meer leeruitkomsten? Dan moet je handmatig meer klassen toevoegen, ik hoop voor de studenten dat dat niet nodig is :D */
 .card01 { grid-area: card01; }
@@ -226,6 +230,16 @@
   padding: 10px;
 }
 
+.flipIcon:hover {
+  transform: scaleX(-1);
+  cursor: pointer;
+  color: #e3e6fc;
+}
+
+.flipIcon {
+  transition: transform 0.5s ease 0s;
+}
+
 .skillBody h3 {
   padding: 16px 0px;
 }
@@ -245,6 +259,10 @@ ul.accordion, .accordionContent ul {
 
 .accordionHeader h4 {
   flex: 1;
+}
+
+.accordionHeader:hover {
+  cursor: pointer;
 }
 
 .accordion {

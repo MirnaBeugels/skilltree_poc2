@@ -2,7 +2,7 @@
 
 import { useMemo, useState, useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faXmark, faChevronDown, faChevronUp } from "@fortawesome/free-solid-svg-icons";
+import { faXmark, faChevronDown, faChevronUp, faLink } from "@fortawesome/free-solid-svg-icons";
 import styles from "./page.module.css";
 
 // Een object met de leeruitkomsten, beoordelingen, vaardigheden en definities
@@ -1562,15 +1562,22 @@ export default function Home() {
                     {/* Wanneer je op de header div klikt wordt de status van openActivity aangepast naar true/false */}
                     <div className={styles.accordionHeader} onClick={() => activityToggle(activityKey)}>
                       <h4>{activity.name}</h4>
-                      <div><FontAwesomeIcon icon={faChevronDown} size="lg" /></div>
-                    </div>
+                      {/* Wanneer openActivity true is: Chevron omlaag */}
+                      {openActivity !== activityKey && (
+                        <div><FontAwesomeIcon icon={faChevronDown} size="lg" /></div>
+                      )}
+                      {/* Wanneer openActivity false is: Chevron omhoog */}
+                      {openActivity === activityKey && (
+                        <div><FontAwesomeIcon icon={faChevronUp} size="lg" /></div>
+                      )}
+                      </div>
                     {/* Wanneer openActivity true is wordt de content van de activity weergegeven, anders niet */}
                     {openActivity === activityKey && (
                       <div className={styles.accordionContent}>
                         <p>{activity.explanation}</p>
                           <ul>
                             {Object.entries(activity.sources).map(([sourceKey, source]) => (
-                              <li key={sourceKey}><a href={source} target="_blank" rel="noopener noreferrer">{source}</a></li>
+                              <li key={sourceKey}><a href={source} target="_blank" rel="noopener noreferrer"><FontAwesomeIcon icon={faLink} className="icon" /> {source}</a></li>
                             ))}
                           </ul>
                       </div>
@@ -1582,7 +1589,7 @@ export default function Home() {
           </div>
           <div className={styles.skillClose}>
             {/* Roep de skillToggle functie aan om de modal te sluiten */}
-            <FontAwesomeIcon icon={faXmark} onClick={skillToggle} size="xl" />
+            <FontAwesomeIcon icon={faXmark} onClick={skillToggle} className={styles.flipIcon} size="2xl" />
           </div>
         </div>
       </div> }
