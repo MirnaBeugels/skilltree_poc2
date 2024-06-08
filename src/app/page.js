@@ -1339,9 +1339,16 @@ function getHexagonSVG(claimed, color, skillName, getTextColor) {
 
 export default function Home() {
 
+  // States voor de controle over de hexagonkleuren, tekstkleur en het modal venster voor de skills
   const [colorMap, setColorMap] = useState({});
   const [textColor, setTextColor] = useState({});
-
+  const [showSkill, setshowSkill] = useState(false);
+  
+  // Een functie die de showSkill state wijzigt wanneer er op een skill (hexagon) geklikt wordt
+  function skillToggle() {
+    setshowSkill((showSkill) => !showSkill);
+  };
+  
   // Om ervoor te zorgen dat de kleuren niet bij iedere re-render wanneer bijvoorbeeld leeruitkomsten of skills bekeken worden opnieuw geladen worden maken we gebruik van useEffect met een dependency array en local storage
   useEffect(() => {
     // Controleer of de kleuren al in de localstorage staan
@@ -1366,17 +1373,27 @@ export default function Home() {
 
   }, []);
 
+  // Wanneer het modal venster zichtbaar is (showSkill = true) dan wordt er een klasse aan het main element toegevoegd om deze inactief en onscrolbaar te maken
+  useEffect(() => {
+    if (showSkill) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'auto';
+    }
+  }, [showSkill]);
+
   // Haal alle leeruitkomsten op uit de studentData
   const outcomes = Object.values(studentData.outcomes);
 
- // Maak een array voor de kaarten door de uitkomsten te mappen
+ // Maak een array voor de kaarten door de leeruitkomsten te mappen
  const cards = outcomes.map((outcome, i) => {
-  // Create an array of hexagons for each outcome
+
+  // Maak een array van hexagons voor iedere leeruitkomst, roep de skillToggle functie aan wanneer er op een hexagon geklikt wordt
   const hexagons = Object.entries(outcome.skills).map(([skillKey, skill], j) => {
     const color = colorMap[`${i}-${skillKey}`];
     const getTextColor = textColor;
     return (
-      <div key={j} className={styles[`skill0${j + 1}`]} dangerouslySetInnerHTML={{ __html: getHexagonSVG(skill.claimed, color, skillKey, getTextColor) }}></div>
+      <div key={j} className={styles[`skill0${j + 1}`]} onClick={() => skillToggle(skill)} dangerouslySetInnerHTML={{ __html: getHexagonSVG(skill.claimed, color, skillKey, getTextColor)}}></div>
     );
   });
 
@@ -1487,13 +1504,19 @@ export default function Home() {
     return areas.trim();
   }, [outcomes]);
 
-  // Retourneer de kaarten container met de kaarten en de gegenereerde grid-area-template 
+  // Retourneer de kaarten container met de kaartjes en gridtemplate
+  // Retourneer het modal venster om een skill te bekijken, roep de skillToggle functie aan wanneer er op de sluit knop gedrukt wordt om het venster weer te sluiten
   return (
-    <main
-      className={styles.cardsContainer}
-      style={{ gridTemplateAreas: gridTemplateAreas }}
-    >
+    <>
+    <main className={styles.cardsContainer} style={{ gridTemplateAreas: gridTemplateAreas }}>
       {cards}
     </main>
+
+    { showSkill && 
+        <div className={styles.expandSkillContainer}>
+        <div className={styles.expandSkill} onClick={skillToggle}><button>Sluiten</button></div>
+      </div> }
+
+    </>
   );
 }
