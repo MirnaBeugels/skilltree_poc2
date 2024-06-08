@@ -4,7 +4,6 @@
   margin: 0;
 }
 
-
 body {
   background: var(--Background, 
               url('/colorshifting.png') 
@@ -24,5 +23,9 @@ body {
   margin-bottom: 73px;
   font-size: 1.5rem;
   text-transform: uppercase;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: #1DD6FF;
 }
 

@@ -29,7 +29,16 @@ const studentData = {
             },
             activity02: {
               name: "naam van activiteit",
-              explanation: "",
+              explanation: "uitleg wat je kunt doen voor deze activiteit",
+              sources: {
+                source01: "url to source",
+                source02: "url to source",
+                source03: "url to source"
+              }
+            },
+            activity03: {
+              name: "naam van activiteit",
+              explanation: "uitleg wat je kunt doen voor deze activiteit",
               sources: {
                 source01: "url to source",
                 source02: "url to source",
@@ -1342,13 +1351,21 @@ export default function Home() {
   // States voor de controle over de hexagonkleuren, tekstkleur en het modal venster voor de skills
   const [colorMap, setColorMap] = useState({});
   const [textColor, setTextColor] = useState({});
+  const [selectedSkill, setSelectedSkill] = useState(null);
   const [showSkill, setshowSkill] = useState(false);
+  const [openActivity, setOpenActivity] = useState(null);
   
-  // Een functie die de showSkill state wijzigt wanneer er op een skill (hexagon) geklikt wordt
-  function skillToggle() {
+  // Functie voor het wijzigen van de state waarmee een aangeklikte skill opgeslagen en het modal venster geopend wordt
+  const skillToggle = (skill) => {
+    setSelectedSkill(skill);
     setshowSkill((showSkill) => !showSkill);
   };
-  
+
+  // Functie voor het wijzigen van de state waarmee de activity accordion geopend en gesloten wordt
+  const activityToggle = (activityKey) => {
+    setOpenActivity(openActivity === activityKey ? null : activityKey);
+  };
+
   // Om ervoor te zorgen dat de kleuren niet bij iedere re-render wanneer bijvoorbeeld leeruitkomsten of skills bekeken worden opnieuw geladen worden maken we gebruik van useEffect met een dependency array en local storage
   useEffect(() => {
     // Controleer of de kleuren al in de localstorage staan
@@ -1505,16 +1522,54 @@ export default function Home() {
   }, [outcomes]);
 
   // Retourneer de kaarten container met de kaartjes en gridtemplate
-  // Retourneer het modal venster om een skill te bekijken, roep de skillToggle functie aan wanneer er op de sluit knop gedrukt wordt om het venster weer te sluiten
   return (
     <>
+    {/* Laat de container met kaartjes in het gridtemplate zien */}
     <main className={styles.cardsContainer} style={{ gridTemplateAreas: gridTemplateAreas }}>
       {cards}
     </main>
 
+    {/* Wanneer showSkill true is (er is een skill aangeklikt) openen we het modal venster met daarin de gegevens van de aangeklikte skill */}
     { showSkill && 
         <div className={styles.expandSkillContainer}>
-        <div className={styles.expandSkill} onClick={skillToggle}><button>Sluiten</button></div>
+        <div className={styles.expandSkill}>
+
+          <div className={styles.skillContent}>
+            <div className={styles.skillHeader}>
+              <h2>{selectedSkill.skill}</h2>
+              <p>{selectedSkill.definition}</p>
+            </div>
+            <div className={styles.skillBody}>
+            <h3>Activities</h3>
+              <ul className={styles.accordion}>
+                {/* Map alle activities van de skill in een eigen list item */}
+                {Object.entries(selectedSkill.activities).map(([activityKey, activity]) => (
+                  <li key={activityKey} className={styles.accordionItem}>
+                    {/* Wanneer je op de header div klikt wordt de status van openActivity aangepast naar true/false */}
+                    <div className={styles.accordionHeader} onClick={() => activityToggle(activityKey)}>
+                      <h4>{activity.name}</h4>
+                    </div>
+                    {/* Wanneer openActivity true is wordt de content van de activity weergegeven, anders niet */}
+                    {openActivity === activityKey && (
+                      <div className={styles.accordionContent}>
+                        <p>{activity.explanation}</p>
+                          <ul>
+                            {Object.entries(activity.sources).map(([sourceKey, source]) => (
+                              <li key={sourceKey}><a href={source} target="_blank" rel="noopener noreferrer">{source}</a></li>
+                            ))}
+                          </ul>
+                      </div>
+                    )}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+          <div className={styles.skillClose}>
+            {/* Roep de skillToggle functie aan om de modal te sluiten */}
+            <button onClick={skillToggle}>Sluiten</button>
+          </div>
+        </div>
       </div> }
 
     </>

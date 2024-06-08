@@ -201,15 +201,38 @@
 }
 
 .expandSkill {
-  
+  color: #C5CBFC;
   background-color: #140C2C;
   padding: 20px;
   border-radius: 8px;
   width: 80%;
   z-index: 21;
+  display: flex;
+  padding: 20px;
+  overflow: auto;
 }
 
 .no-scroll {
   overflow: hidden;
   pointer-events: none
+}
+
+.skillContent {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.skillHeader, .skillBody {
+  padding: 10px;
+}
+
+.skillHeader h2, .skillHeader p {
+  margin: 0;
+}
+
+.skillClose {
+  display: flex;
+  align-items: flex-start;
+  padding: 10px;
 }
