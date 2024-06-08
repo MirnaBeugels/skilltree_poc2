@@ -1390,13 +1390,25 @@ export default function Home() {
 
   }, []);
 
-  // Wanneer het modal venster zichtbaar is (showSkill = true) dan wordt er een klasse aan het main element toegevoegd om deze inactief en onscrolbaar te maken
+  // Wanneer het modal venster zichtbaar is (showSkill = true) dan verandert overflow: auto naar overflow:hidden in de body tag om deze inactief en onscrolbaar te maken
+  // Om de layoutshift te voorkomen wanneer de scrollbar zichtbaar was en ineens niet meer voegen we rechts een padding toe wanneer de modal zichtbaar is
   useEffect(() => {
+    const body = document.body;
+    const scrollbarWidth = window.innerWidth - body.clientWidth;
+  
     if (showSkill) {
-      document.body.style.overflow = 'hidden';
+      body.style.overflow = 'hidden';
+      body.style.paddingRight = `${scrollbarWidth}px`;
     } else {
-      document.body.style.overflow = 'auto';
+      body.style.overflow = 'auto';
+      body.style.paddingRight = '0px';
     }
+  
+    // Cleanup function to reset the body styles when the component is unmounted
+    return () => {
+      body.style.overflow = 'auto';
+      body.style.paddingRight = '0px';
+    };
   }, [showSkill]);
 
   // Haal alle leeruitkomsten op uit de studentData
