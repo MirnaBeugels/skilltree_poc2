@@ -12,7 +12,7 @@ const studentData = {
     outcome01: {
       name: "Leeruitkomst 1", 
       grade: "Oriënterend",
-      gradeDefinition: "Orienterend betekent",
+      gradeDefinition: "Definitie orienterend",
       definition: "Je baseert je keuzes op feedback van stakeholders en onderbouwt ze op een heldere en professionele wijze.",
       skills: {
         Skill01: {
@@ -104,7 +104,7 @@ const studentData = {
     outcome02: {
       name: "Leeruitkomst 2",
       grade: "Beginnend",
-      gradeDefinition: "Beginnend betekent Lorem ipsum dolor sit amet",
+      gradeDefinition: "Definitie beginnend",
       definition: "Je werkt samen en communiceert met anderen op constructieve en professionele wijze.", // Definitie van de leeruitkomst
       skills: {
         Skill01: {
@@ -187,7 +187,7 @@ const studentData = {
     outcome03: {
       name: "Leeruitkomst 3",
       grade: "Gevorderd",
-      gradeDefinition: "Gevorderd betekent Lorem ipsum dolor sit amet",
+      gradeDefinition: "Definitie gevorderd",
       definition: "Je documenteert gevalideerde gebruikersspecificaties voor applicaties en vertaalt deze in correcte softwareontwerpen.", // Definitie van de leeruitkomst
       skills: {
         Skill01: {
@@ -270,7 +270,7 @@ const studentData = {
     outcome04: {
       name: "Leeruitkomst 4",
       grade: "Gevorderd",
-      gradeDefinition: "Gevorderd betekent Lorem ipsum dolor sit amet",
+      gradeDefinition: "Definitie gevorderd",
       definition: "Je bouwt, ontwerpt en levert herhaaldelijk veilige en onderhoudbare applicaties op (waarvan er tenminste één web-gebaseerd is) die verbinding maken met een database en gebruik maken van OO-principes en standaard technieken gebaseerd op gevalideerde gebruikerseisen.", // Definitie van de leeruitkomst
       skills: {
         Skill01: {
@@ -428,7 +428,7 @@ const studentData = {
     outcome05: {
       name: "Leeruitkomst 5",
       grade: "Beginnend",
-      gradeDefinition: "Beginnend betekent Lorem ipsum dolor sit amet",
+      gradeDefinition: "Definitie beginnend",
       definition: "Je redeneert over computationele uitdagingen en implementeert algoritmisch complexe problemen in software.", // Definitie van de leeruitkomst
       skills: {
         Skill01: {
@@ -486,7 +486,7 @@ const studentData = {
     outcome06: {
       name: "Leeruitkomst 6",
       grade: "Geoefend",
-      gradeDefinition: "Geoefend betekent Lorem ipsum dolor sit amet",
+      gradeDefinition: "Definitie geoefend",
       definition: "Je ontwerpt, bouwt en bevraagt een relationeel databasesysteem en integreert dit met een applicatie.", // Definitie van de leeruitkomst
       skills: {
         Skill01: {
@@ -544,7 +544,7 @@ const studentData = {
     outcome07: {
       name: "Leeruitkomst 7",
       grade: "Oriënterend",
-      gradeDefinition: "Orienterend betekent Lorem ipsum dolor sit amet",
+      gradeDefinition: "Definitie orienterend",
       definition: "Je verbetert en toont de kwaliteit van je software continu aan, gebruikmakend van standaard technieken en hulpmiddelen.", // Definitie van de leeruitkomst
       skills: {
         Skill01: {

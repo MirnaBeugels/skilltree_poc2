@@ -97,6 +97,13 @@
     text-align: center
 }
 
+.outcomeGrade:hover {
+  color: #e3e6fc;
+  font-size: 2rem;
+  text-align: center;
+  cursor: pointer;
+}
+
   .skillsContainer {
     display: grid;
     max-width: 289px;
@@ -177,6 +184,7 @@
   background-color: #140C2C;
   border-radius: 8px;
   color: #f0f2ff;
+  text-align: left;
 }
 
 .expandSkillContainer {
