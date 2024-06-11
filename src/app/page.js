@@ -2080,7 +2080,7 @@ export default function Home() {
 
     for (let j = skills.length; j < 7; j++) {
       hexagons.push(
-        <div key={`transparent${j}`} className={`${styles[`skill0${j + 1}`]}`} dangerouslySetInnerHTML={{ __html: getHexagonSVG(false, '#1D6AFF20', '', 'transparent', true) }}></div>
+        <div key={`transparent${j}`} className={`${styles[`skill0${j + 1}`]}`} dangerouslySetInnerHTML={{ __html: getHexagonSVG(false, '#1D6AFF40', '', 'transparent', true) }}></div>
       );
     }
   
@@ -2218,7 +2218,7 @@ export default function Home() {
               <p>{selectedSkill.definition}</p>
             </div>
             <div className={styles.skillBody}>
-              <h3>Activities</h3>
+              <h3>Activiteiten</h3>
               <ul className={styles.accordion}>
                 {/* Map alle activities van de skill in een eigen list item */}
                 {Object.entries(selectedSkill.activities).map(([activityKey, activity]) => (
@@ -2249,6 +2249,11 @@ export default function Home() {
                   </li>
                 ))}
               </ul>
+              <h3>Aantonen</h3>
+              <form className={styles.proveSkill}>
+                <input type="text" placeholder="Link naar oplevering..."></input>
+                <button>Aantonen</button>
+              </form>
             </div>
           </div>
           <div className={styles.skillClose}>

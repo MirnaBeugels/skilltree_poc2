@@ -51,31 +51,31 @@
 
 /* Stijlen voor afbeeldingscellen */
 .imageCell {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 504px;
-    overflow: visible;
-  }
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 504px;
+  overflow: visible;
+}
+
+.imageCell img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: cover;
+  opacity: 0.35;
+  mix-blend-mode: screen;
+}
   
-  .imageCell img {
-    max-width: 100%;
-    max-height: 100%;
-    object-fit: cover;
-    opacity: 0.35;
-    mix-blend-mode: screen;
-  }
-  
-  /* Specifieke margestijlen voor afbeeldingscellen */
-  .imageLeft {
-    margin-left: -150px;
-    rotate: -15deg;
-  }
-  
-  .imageRight {
-    margin-right: -150px;
-    rotate: 15deg;
-  }
+/* Specifieke margestijlen voor afbeeldingscellen */
+.imageLeft {
+  margin-left: -150px;
+  rotate: -15deg;
+}
+
+.imageRight {
+  margin-right: -150px;
+  rotate: 15deg;
+}
 
 .outcomeName {
     color: #C5CBFC;
@@ -104,19 +104,19 @@
   cursor: pointer;
 }
 
-  .skillsContainer {
-    display: grid;
-    max-width: 289px;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 40px;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(3, 1fr);
-    gap: 5px;
-    grid-template-areas:
-    ". skill01 skill02"
-    "skill03 skill04 skill05"
-    ". skill06 skill07";
+.skillsContainer {
+  display: grid;
+  max-width: 289px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 40px;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  gap: 5px;
+  grid-template-areas:
+  ". skill01 skill02"
+  "skill03 skill04 skill05"
+  ". skill06 skill07";
 }
 
 .skill01 { grid-area: skill01; margin-left: -49px; }
@@ -284,4 +284,30 @@ ul.accordion, .accordionContent ul {
 .accordionContent {
   color: #E8E9EB;
   padding-bottom: 24px;
+}
+
+.proveSkill input {
+  border-radius: 8px;
+  background: #6E648E80;
+  padding: 8px 16px;
+  border-style: solid;
+  border: none;
+  color: #e3e6fc;
+  margin-right: 8px;
+}
+
+.proveSkill input::placeholder {
+  color: #e3e6fc80;
+}
+
+.proveSkill input:focus, .proveSkill button:focus {
+  outline: 1px solid #e3e6fc80;
+}
+
+.proveSkill button {
+  border-radius: 8px;
+  background: linear-gradient(to right, #B658F0 , #9971F4);
+  padding: 8px 16px;
+  color: #e3e6fc;
+  border-style: none;
 }
